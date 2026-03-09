@@ -1,4 +1,4 @@
-const API = "https://script.google.com/macros/s/AKfycbx0VgtB87_Neim02g2TUaPpzGCeFN-KQNhXwONpBtdTObrORm4RsNGP8IJAgJfd03w/exec"
+const API = "https://script.google.com/macros/s/AKfycbzKW7xI2PnGTxRQjme_tR3vQUKl25jlFnEpDm2UG6NuHwJZG84Wqs86YD9nybYfN27r/exec"
 
 let namaUser=""
 
@@ -97,4 +97,5 @@ alert("Presensi kelas tersimpan")
 
 
 }
+
 
