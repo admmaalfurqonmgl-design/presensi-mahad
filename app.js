@@ -7,112 +7,50 @@ function login(){
 let user = document.getElementById("username").value
 let pass = document.getElementById("password").value
 
-if(user && pass){
+fetch(API,{
+method:"POST",
+body:JSON.stringify({
+action:"login",
+username:user,
+password:pass
+})
+})
+.then(r=>r.json())
+.then(res=>{
 
-localStorage.setItem("user",user)
+if(res.status){
+
+namaUser = res.nama
+
+localStorage.setItem("nama",res.nama)
 
 window.location="dashboard.html"
 
 }
 else{
 
-alert("Isi username dan password")
+alert("Login gagal")
 
 }
+
+})
 
 }
 
 function presensi(jenis){
 
-navigator.geolocation.getCurrentPosition(pos=>{
-
-fetch(API,{
-method:"POST",
-body:JSON.stringify({
-
-action:"presensi",
-nama:namaUser,
-jenis:jenis,
-jam:new Date().toLocaleTimeString(),
-lat:pos.coords.latitude,
-lng:pos.coords.longitude
-
-})
-
-})
-
-alert("Presensi berhasil")
-
-})
+alert("Presensi "+jenis)
 
 }
 
 function izin(){
 
-let jenis = prompt("Jenis izin")
-
-let ket = prompt("Keterangan")
-
-fetch(API,{
-method:"POST",
-body:JSON.stringify({
-
-action:"izin",
-nama:namaUser,
-jenis:jenis,
-keterangan:ket
-
-})
-
-})
-
-alert("Izin terkirim")
+alert("Izin berhasil dikirim")
 
 }
 
 function presensiKelas(){
 
-let mk = prompt("Mata Kuliah")
-
-let judul = prompt("Judul Pembelajaran")
-
-let status = prompt("Status hadir/izin/sakit/alpha")
-
-fetch(API,{
-method:"POST",
-body:JSON.stringify({
-
-action:"kelas",
-mk:mk,
-judul:judul,
-nama:namaUser,
-status:status,
-dosen:namaUser
-
-})
-
-})
-
-alert("Presensi kelas tersimpan")
-
+alert("Presensi kelas")
 
 }
-
-.then(res=>{
-
-if(res.status){
-
-alert("Presensi berhasil\n"+res.statusPresensi+"\n"+res.keterangan)
-
-}
-
-else{
-
-alert(res.message)
-
-}
-
-})
-
-
-
