@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Presensi Ma'had Aly</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="login">
+
+<h2>Login Presensi</h2>
+
+<input id="username" placeholder="Username">
+
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+</div>
+
+<div id="menu" style="display:none">
+
+<h2 id="namaUser"></h2>
+
+<button onclick="presensi('masuk')">Presensi Masuk</button>
+
+<button onclick="presensi('pulang')">Presensi Pulang</button>
+
+<button onclick="izin()">Izin</button>
+
+<button onclick="presensiKelas()">Presensi Kelas</button>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
