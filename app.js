@@ -4,40 +4,21 @@ let namaUser=""
 
 function login(){
 
-fetch(API,{
-method:"POST",
-body:JSON.stringify({
+let user = document.getElementById("username").value
+let pass = document.getElementById("password").value
 
-action:"login",
-username:document.getElementById("username").value,
-password:document.getElementById("password").value
+if(user && pass){
 
-})
+localStorage.setItem("user",user)
 
-})
-
-.then(r=>r.json())
-.then(res=>{
-
-if(res.status){
-
-namaUser=res.nama
-
-document.getElementById("login").style.display="none"
-
-document.getElementById("menu").style.display="block"
-
-document.getElementById("namaUser").innerText=res.nama
+window.location="dashboard.html"
 
 }
-
 else{
 
-alert("Login gagal")
+alert("Isi username dan password")
 
 }
-
-})
 
 }
 
@@ -116,3 +97,4 @@ alert("Presensi kelas tersimpan")
 
 
 }
+
