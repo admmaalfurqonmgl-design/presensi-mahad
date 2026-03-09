@@ -39,18 +39,56 @@ alert("Login gagal")
 
 function presensi(jenis){
 
-alert("Presensi "+jenis)
+let nama = localStorage.getItem("nama")
+
+fetch(API,{
+method:"POST",
+body:JSON.stringify({
+
+action:"presensi",
+nama:nama,
+jenis:jenis,
+jam:new Date().toLocaleTimeString()
+
+})
+
+})
+.then(r=>r.json())
+.then(res=>{
+
+if(res.status){
+
+alert("Presensi berhasil\n"+res.statusPresensi+"\n"+res.keterangan)
+
+}
+else{
+
+alert(res.message)
+
+}
+
+})
 
 }
 
 function izin(){
 
-alert("Izin berhasil dikirim")
+let keterangan = prompt("Masukkan alasan izin");
+
+if(keterangan){
+alert("Izin terkirim");
+}
 
 }
 
 function presensiKelas(){
 
-alert("Presensi kelas")
+let mk = prompt("Mata Kuliah");
+let judul = prompt("Judul Pembelajaran");
+
+if(mk && judul){
+alert("Presensi kelas berhasil");
+}
 
 }
+
