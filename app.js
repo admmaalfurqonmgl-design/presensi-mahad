@@ -98,4 +98,19 @@ alert("Presensi kelas tersimpan")
 
 }
 
+.then(res=>{
+
+if(res.status){
+
+alert("Presensi berhasil\n"+res.statusPresensi+"\n"+res.keterangan)
+
+}
+
+else{
+
+alert(res.message)
+
+}
+
+})
 
