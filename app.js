@@ -1,4 +1,4 @@
-const API = "PASTE_API_URL_DISINI"
+const API = "https://script.google.com/macros/s/AKfycbx0VgtB87_Neim02g2TUaPpzGCeFN-KQNhXwONpBtdTObrORm4RsNGP8IJAgJfd03w/exec"
 
 let namaUser=""
 
@@ -113,5 +113,6 @@ dosen:namaUser
 })
 
 alert("Presensi kelas tersimpan")
+
 
 }
