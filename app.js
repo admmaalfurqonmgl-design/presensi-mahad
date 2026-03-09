@@ -9,7 +9,7 @@ let pass = document.getElementById("password").value
 
 if(user && pass){
 
-localStorage.setItem("user",user)
+localStorage.setItem("nama", res.nama)
 
 window.location="dashboard.html"
 
@@ -113,4 +113,5 @@ alert(res.message)
 }
 
 })
+
 
